@@ -1,0 +1,84 @@
+
+State Machine - |Integrador|DisplaySelector:instDisplaySelector|next_state
+Name next_state.M2 next_state.M1 next_state.B_Mode next_state.A_Mode 
+next_state.A_Mode 0 0 0 0 
+next_state.B_Mode 0 0 1 1 
+next_state.M1 0 1 0 1 
+next_state.M2 1 0 0 1 
+
+State Machine - |Integrador|DisplaySelector:instDisplaySelector|state
+Name state.M2 state.M1 state.B_Mode state.A_Mode 
+state.A_Mode 0 0 0 0 
+state.B_Mode 0 0 1 1 
+state.M1 0 1 0 1 
+state.M2 1 0 0 1 
+
+State Machine - |Integrador|DecodeComand:instDecodeComand|next_state
+Name next_state.ZCTRL next_state.ZSIM next_state.ZVM next_state.ZM2 next_state.ZM1 next_state.CTRLX next_state.CTRL next_state.SIMX next_state.SIM next_state.VEL_MED_U next_state.VEL_MED next_state.VEL_M2_U next_state.VEL_M2 next_state.VEL_M1_U next_state.VEL_M1 next_state.STOP next_state.COMMAND next_state.IDLE 
+next_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+next_state.COMMAND 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+next_state.STOP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+next_state.VEL_M1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+next_state.VEL_M1_U 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+next_state.VEL_M2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+next_state.VEL_M2_U 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+next_state.VEL_MED 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+next_state.VEL_MED_U 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+next_state.SIM 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+next_state.SIMX 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+next_state.CTRL 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+next_state.CTRLX 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.ZM1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.ZM2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.ZVM 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.ZSIM 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+next_state.ZCTRL 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Integrador|DecodeComand:instDecodeComand|state
+Name state.ZCTRL state.ZSIM state.ZVM state.ZM2 state.ZM1 state.CTRLX state.CTRL state.SIMX state.SIM state.VEL_MED_U state.VEL_MED state.VEL_M2_U state.VEL_M2 state.VEL_M1_U state.VEL_M1 state.STOP state.COMMAND state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.COMMAND 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.STOP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.VEL_M1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.VEL_M1_U 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.VEL_M2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.VEL_M2_U 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.VEL_MED 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.VEL_MED_U 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.SIM 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.SIMX 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.CTRL 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.CTRLX 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ZM1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ZM2 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ZVM 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ZSIM 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ZCTRL 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Integrador|SerialPort:instSerialPort|state
+Name state.STOP state.BIT8 state.BIT7 state.BIT6 state.BIT5 state.BIT4 state.BIT3 state.BIT2 state.BIT1 state.START state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 
+state.START 0 0 0 0 0 0 0 0 0 1 1 
+state.BIT1 0 0 0 0 0 0 0 0 1 0 1 
+state.BIT2 0 0 0 0 0 0 0 1 0 0 1 
+state.BIT3 0 0 0 0 0 0 1 0 0 0 1 
+state.BIT4 0 0 0 0 0 1 0 0 0 0 1 
+state.BIT5 0 0 0 0 1 0 0 0 0 0 1 
+state.BIT6 0 0 0 1 0 0 0 0 0 0 1 
+state.BIT7 0 0 1 0 0 0 0 0 0 0 1 
+state.BIT8 0 1 0 0 0 0 0 0 0 0 1 
+state.STOP 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Integrador|SerialPort:instSerialPort|next_state
+Name next_state.STOP next_state.BIT8 next_state.BIT7 next_state.BIT6 next_state.BIT5 next_state.BIT4 next_state.BIT3 next_state.BIT2 next_state.BIT1 next_state.START next_state.IDLE 
+next_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 
+next_state.START 0 0 0 0 0 0 0 0 0 1 1 
+next_state.BIT1 0 0 0 0 0 0 0 0 1 0 1 
+next_state.BIT2 0 0 0 0 0 0 0 1 0 0 1 
+next_state.BIT3 0 0 0 0 0 0 1 0 0 0 1 
+next_state.BIT4 0 0 0 0 0 1 0 0 0 0 1 
+next_state.BIT5 0 0 0 0 1 0 0 0 0 0 1 
+next_state.BIT6 0 0 0 1 0 0 0 0 0 0 1 
+next_state.BIT7 0 0 1 0 0 0 0 0 0 0 1 
+next_state.BIT8 0 1 0 0 0 0 0 0 0 0 1 
+next_state.STOP 1 0 0 0 0 0 0 0 0 0 1 
