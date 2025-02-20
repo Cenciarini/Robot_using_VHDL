@@ -1,0 +1,52 @@
+library IEEE;
+
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity BaudRate is
+    Generic (NBits: natural := 13;
+				Rx: natural := 2604;
+	         Max: natural := 5208);
+				
+    Port (  
+				piClk : in STD_LOGIC;
+            piEna : in STD_LOGIC;
+            piRst : in STD_LOGIC;
+				piRx	: in STD_LOGIC;
+				poRx	: out STD_LOGIC
+		 );	
+end BaudRate;
+
+architecture A_BaudRate of BaudRate is
+
+signal auxCount: unsigned(NBits-1 downto 0);
+signal uartCounter: unsigned(3 downto 0) := "0000";
+signal auxBIT: std_LOGIC := '0';
+
+begin
+
+    process(piClk, piEna, piRst)
+    begin
+	  if piRst = '1' then
+			auxCount <= to_unsigned(0, NBits);
+	  elsif rising_edge(piClk) then
+			if piRx = '0' and uartCounter = "0000" then
+				auxCount <= to_unsigned(0, NBits);
+				uartCounter <= "0001";
+			end if;
+			if piEna = '1' and uartCounter > "0000" then
+				auxCount <= auxCount + to_unsigned(1, NBits);
+				if auxCount = to_unsigned(Max-1, NBits) then
+					auxCount <= to_unsigned(0, NBits);
+					uartCounter <= uartCounter + to_unsigned(1,4);
+					if uartCounter = "1010" then
+						uartCounter <= to_unsigned(0,4);
+					end if;
+				end if;
+			end if;	
+	  end if;        
+	end process;
+
+	poRx <= '1' when auxCount = to_unsigned(Rx, NBits) else '0';
+    
+end A_BaudRate;

@@ -1,0 +1,41 @@
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+architecture aIntegrador of Integrador is
+
+component BaudRate is
+    Generic (NBits: natural := 25;
+	         Max: natural := 25000000);
+    Port (  piClk : in STD_LOGIC;
+            piEna : in STD_LOGIC;
+            piRst : in STD_LOGIC;
+				piUD	: in STD_LOGIC;
+            poX : out std_logic_vector(3 downto 0)
+		 );	
+end component BaudRate;
+
+component SerialPort is
+    Generic (NBits: natural := 25;
+	         Max: natural := 25000000);
+    Port (  piClk : in STD_LOGIC;
+            piEna : in STD_LOGIC;
+            piRst : in STD_LOGIC;
+				piUD	: in STD_LOGIC;
+            poX : out std_logic_vector(3 downto 0)
+		 );	
+end component SerialPort;
+
+signal count: std_logic_vector(3 downto 0);
+
+begin
+
+instBaudRate: BaudRate
+	port map(piA => count(0),piB => count(1),piC => count(2),piD => count(3),poA => HexValue(6),poB => HexValue(5),poC => HexValue(4),poD => HexValue(3),poE => HexValue(2),poF => HexValue(1),poG => HexValue(0));
+
+instSerialPort: SerialPort
+	generic map(NBits => 25,Max => 50000000)
+	port map(piClk => CLK, piEna => ENABLED, piRst => RST, piUD => MODE, poX => count);
+
+end architecture aMyCounterHex;

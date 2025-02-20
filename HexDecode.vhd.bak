@@ -1,0 +1,82 @@
+-- File:
+-- Author:
+-- Date:
+-- Revision:
+-- Description:
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+-- use ieee.numeric_bit.all;
+-- use std.textio.all;
+-- use ieee.std_logic_textio.all;
+
+
+-- ENTITY DECLARATION ------------------------------------------------------------------------------
+entity Proyecto1 is
+    -- generic / port / local declatations
+--     generic (N: Natural := 4);
+    
+    port ( 
+        piA: in std_logic;
+        piB: in std_logic;
+        piC: in std_logic;
+        piD: in std_logic;
+		  
+        poA: out std_logic;
+		  poB: out std_logic;
+		  poC: out std_logic;
+        poD: out std_logic;
+        poE: out std_logic;
+		  poF: out std_logic;
+		  poG: out std_logic
+    );
+end entity Proyecto1;
+
+
+-- ARCHITECTURE DECLARATION ------------------------------------------------------------------------
+architecture A_Proyecto1 of Proyecto1 is
+    -- local declarations (use function type file component constant signal procedure subtype alias)
+--     signal aux : std_logic;
+begin
+
+	 -- Segment A
+    poA <= (not piA and not piB and not piC and piD) or
+           (not piA and piB and not piC and not piD) or
+           (piA and piB and not piC and piD) or
+           (piA and not piB and piC and piD);
+
+    -- Segment B
+    poB <= (piA and piB and not piC and piD) or
+           (piA and piB and piC and not piD) or
+           (not piA and piB and not piC and not piD) or
+           (piA and not piB and piC and not piD);
+
+    -- Segment C
+    poC <= (piA and piB and not piC and not piD) or
+           (piA and not piB and piC and not piD) or
+           (not piA and not piB and piC and not piD);
+
+    -- Segment D
+    poD <= (not piA and not piB and not piC and piD) or
+           (not piA and piB and not piC and not piD) or
+           (piA and not piB and not piC and piD) or
+           (piA and piB and piC and not piD);
+
+    -- Segment E
+    poE <= (not piA and not piB and not piC and piD) or
+           (not piA and not piB and piC and not piD) or
+           (piA and not piB and piC and piD);
+
+    -- Segment F
+    poF <= (not piA and not piB and not piC and piD) or
+           (not piA and piB and piC and not piD) or
+           (piA and piB and not piC and piD);
+
+    -- Segment G
+    poG <= (not piA and piB and not piC and not piD) or
+           (piA and piB and not piC and piD) or
+           (piA and not piB and piC and not piD);
+     
+end architecture A_Proyecto1;
+		 

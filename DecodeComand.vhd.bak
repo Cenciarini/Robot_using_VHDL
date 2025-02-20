@@ -1,0 +1,21 @@
+library IEEE;
+
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity DecodeComand is
+    Port (  
+				piClk : in STD_LOGIC;
+            piEna : in STD_LOGIC;
+            piRst : in STD_LOGIC;
+				piCM	: in std_logic_vector(7 downto 0)
+		 );
+end DecodeComand;
+
+architecture A_DecodeComand of DecodeComand is
+
+
+begin
+	
+    
+end A_DecodeComand;
