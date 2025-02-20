@@ -1,0 +1,1142 @@
+TimeQuest Timing Analyzer report for Integrador
+Tue Dec 03 17:18:20 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Minimum Pulse Width: 'clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'clk'
+ 25. Fast Model Hold: 'clk'
+ 26. Fast Model Minimum Pulse Width: 'clk'
+ 27. Setup Times
+ 28. Hold Times
+ 29. Clock to Output Times
+ 30. Minimum Clock to Output Times
+ 31. Multicorner Timing Analysis Summary
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Setup Transfers
+ 37. Hold Transfers
+ 38. Report TCCS
+ 39. Report RSKM
+ 40. Unconstrained Paths
+ 41. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Integrador                                                        ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------+
+; SDC File List                                      ;
++----------------+--------+--------------------------+
+; SDC File Path  ; Status ; Read at                  ;
++----------------+--------+--------------------------+
+; Integrador.sdc ; OK     ; Tue Dec 03 17:18:19 2024 ;
++----------------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 136.05 MHz ; 136.05 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; 12.650 ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.499 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; clk   ; 8.758 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                  ;
++--------+-------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                 ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 12.650 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; 0.025      ; 7.415      ;
+; 12.650 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; 0.025      ; 7.415      ;
+; 12.650 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; 0.025      ; 7.415      ;
+; 12.650 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; 0.025      ; 7.415      ;
+; 13.090 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM1[0]         ; clk          ; clk         ; 20.000       ; 0.033      ; 6.983      ;
+; 13.090 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM1[1]         ; clk          ; clk         ; 20.000       ; 0.033      ; 6.983      ;
+; 13.090 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM1[2]         ; clk          ; clk         ; 20.000       ; 0.033      ; 6.983      ;
+; 13.090 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM1[3]         ; clk          ; clk         ; 20.000       ; 0.033      ; 6.983      ;
+; 13.090 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM1[4]         ; clk          ; clk         ; 20.000       ; 0.033      ; 6.983      ;
+; 13.090 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM1[5]         ; clk          ; clk         ; 20.000       ; 0.033      ; 6.983      ;
+; 13.090 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM1[6]         ; clk          ; clk         ; 20.000       ; 0.033      ; 6.983      ;
+; 13.090 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM1[7]         ; clk          ; clk         ; 20.000       ; 0.033      ; 6.983      ;
+; 13.144 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.894      ;
+; 13.144 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.894      ;
+; 13.144 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.894      ;
+; 13.144 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.894      ;
+; 13.161 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM2[0]         ; clk          ; clk         ; 20.000       ; 0.039      ; 6.918      ;
+; 13.161 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM2[1]         ; clk          ; clk         ; 20.000       ; 0.039      ; 6.918      ;
+; 13.161 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM2[2]         ; clk          ; clk         ; 20.000       ; 0.039      ; 6.918      ;
+; 13.161 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM2[3]         ; clk          ; clk         ; 20.000       ; 0.039      ; 6.918      ;
+; 13.161 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM2[4]         ; clk          ; clk         ; 20.000       ; 0.039      ; 6.918      ;
+; 13.161 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM2[5]         ; clk          ; clk         ; 20.000       ; 0.039      ; 6.918      ;
+; 13.161 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM2[6]         ; clk          ; clk         ; 20.000       ; 0.039      ; 6.918      ;
+; 13.161 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poM2[7]         ; clk          ; clk         ; 20.000       ; 0.039      ; 6.918      ;
+; 13.255 ; SerialPort:instSerialPort|poCM[4]         ; DecodeComand:instDecodeComand|next_state.IDLE ; clk          ; clk         ; 20.000       ; 0.005      ; 6.790      ;
+; 13.323 ; SerialPort:instSerialPort|poCM[5]         ; DecodeComand:instDecodeComand|next_state.IDLE ; clk          ; clk         ; 20.000       ; 0.005      ; 6.722      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[12]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[13]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[14]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[15]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[16]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[17]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[18]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[19]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[20]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[21]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[22]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[23]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.347 ; BaudRate:instBaudRate|auxCount_Sec[12]    ; BaudRate:instBaudRate|auxCount_Sec[24]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.693      ;
+; 13.370 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX1[0]       ; clk          ; clk         ; 20.000       ; 0.040      ; 6.710      ;
+; 13.372 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX2[0]       ; clk          ; clk         ; 20.000       ; 0.040      ; 6.708      ;
+; 13.372 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX2[3]       ; clk          ; clk         ; 20.000       ; 0.040      ; 6.708      ;
+; 13.372 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX2[2]       ; clk          ; clk         ; 20.000       ; 0.040      ; 6.708      ;
+; 13.372 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX2[1]       ; clk          ; clk         ; 20.000       ; 0.040      ; 6.708      ;
+; 13.372 ; SerialPort:instSerialPort|poDR            ; DecodeComand:instDecodeComand|poHEX2[4]       ; clk          ; clk         ; 20.000       ; 0.040      ; 6.708      ;
+; 13.457 ; SerialPort:instSerialPort|poCM[6]         ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.581      ;
+; 13.457 ; SerialPort:instSerialPort|poCM[6]         ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.581      ;
+; 13.457 ; SerialPort:instSerialPort|poCM[6]         ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.581      ;
+; 13.457 ; SerialPort:instSerialPort|poCM[6]         ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.581      ;
+; 13.515 ; SerialPort:instSerialPort|poCM[0]         ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.523      ;
+; 13.515 ; SerialPort:instSerialPort|poCM[0]         ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.523      ;
+; 13.515 ; SerialPort:instSerialPort|poCM[0]         ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.523      ;
+; 13.515 ; SerialPort:instSerialPort|poCM[0]         ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.523      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[12]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[13]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[14]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[15]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[16]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[17]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[18]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[19]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[20]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[21]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[22]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[23]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.522 ; BaudRate:instBaudRate|auxCount_Sec[11]    ; BaudRate:instBaudRate|auxCount_Sec[24]        ; clk          ; clk         ; 20.000       ; -0.005     ; 6.513      ;
+; 13.530 ; SerialPort:instSerialPort|poCM[3]         ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.508      ;
+; 13.530 ; SerialPort:instSerialPort|poCM[3]         ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.508      ;
+; 13.530 ; SerialPort:instSerialPort|poCM[3]         ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.508      ;
+; 13.530 ; SerialPort:instSerialPort|poCM[3]         ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; -0.002     ; 6.508      ;
+; 13.584 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM1[0]         ; clk          ; clk         ; 20.000       ; 0.006      ; 6.462      ;
+; 13.584 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM1[1]         ; clk          ; clk         ; 20.000       ; 0.006      ; 6.462      ;
+; 13.584 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM1[2]         ; clk          ; clk         ; 20.000       ; 0.006      ; 6.462      ;
+; 13.584 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM1[3]         ; clk          ; clk         ; 20.000       ; 0.006      ; 6.462      ;
+; 13.584 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM1[4]         ; clk          ; clk         ; 20.000       ; 0.006      ; 6.462      ;
+; 13.584 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM1[5]         ; clk          ; clk         ; 20.000       ; 0.006      ; 6.462      ;
+; 13.584 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM1[6]         ; clk          ; clk         ; 20.000       ; 0.006      ; 6.462      ;
+; 13.584 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM1[7]         ; clk          ; clk         ; 20.000       ; 0.006      ; 6.462      ;
+; 13.652 ; DecodeComand:instDecodeComand|M2CountU[0] ; DecodeComand:instDecodeComand|next_state.IDLE ; clk          ; clk         ; 20.000       ; -0.005     ; 6.383      ;
+; 13.655 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM2[0]         ; clk          ; clk         ; 20.000       ; 0.012      ; 6.397      ;
+; 13.655 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM2[1]         ; clk          ; clk         ; 20.000       ; 0.012      ; 6.397      ;
+; 13.655 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM2[2]         ; clk          ; clk         ; 20.000       ; 0.012      ; 6.397      ;
+; 13.655 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM2[3]         ; clk          ; clk         ; 20.000       ; 0.012      ; 6.397      ;
+; 13.655 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM2[4]         ; clk          ; clk         ; 20.000       ; 0.012      ; 6.397      ;
+; 13.655 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM2[5]         ; clk          ; clk         ; 20.000       ; 0.012      ; 6.397      ;
+; 13.655 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM2[6]         ; clk          ; clk         ; 20.000       ; 0.012      ; 6.397      ;
+; 13.655 ; SerialPort:instSerialPort|poCM[7]         ; DecodeComand:instDecodeComand|poM2[7]         ; clk          ; clk         ; 20.000       ; 0.012      ; 6.397      ;
+; 13.663 ; DecodeComand:instDecodeComand|M2CountU[1] ; DecodeComand:instDecodeComand|next_state.IDLE ; clk          ; clk         ; 20.000       ; -0.005     ; 6.372      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[12]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[13]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[14]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[15]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[16]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[17]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[18]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[19]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[20]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[21]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[22]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
+; 13.716 ; BaudRate:instBaudRate|auxCount_Sec[16]    ; BaudRate:instBaudRate|auxCount_Sec[23]        ; clk          ; clk         ; 20.000       ; 0.000      ; 6.324      ;
++--------+-------------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                             ; To Node                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; BaudRate:instBaudRate|uartCounter[3]                  ; BaudRate:instBaudRate|uartCounter[3]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; BaudRate:instBaudRate|uartCounter[1]                  ; BaudRate:instBaudRate|uartCounter[1]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; BaudRate:instBaudRate|uartCounter[2]                  ; BaudRate:instBaudRate|uartCounter[2]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.IDLE             ; SerialPort:instSerialPort|next_state.IDLE             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.BIT1             ; SerialPort:instSerialPort|next_state.BIT1             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.BIT2             ; SerialPort:instSerialPort|next_state.BIT2             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.BIT3             ; SerialPort:instSerialPort|next_state.BIT3             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.BIT4             ; SerialPort:instSerialPort|next_state.BIT4             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.BIT5             ; SerialPort:instSerialPort|next_state.BIT5             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.BIT6             ; SerialPort:instSerialPort|next_state.BIT6             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.BIT7             ; SerialPort:instSerialPort|next_state.BIT7             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.BIT8             ; SerialPort:instSerialPort|next_state.BIT8             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|next_state.STOP             ; SerialPort:instSerialPort|next_state.STOP             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|auxX[5]                     ; SerialPort:instSerialPort|auxX[5]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|auxX[7]                     ; SerialPort:instSerialPort|auxX[7]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|auxX[6]                     ; SerialPort:instSerialPort|auxX[6]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|auxX[4]                     ; SerialPort:instSerialPort|auxX[4]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|auxX[3]                     ; SerialPort:instSerialPort|auxX[3]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|auxX[2]                     ; SerialPort:instSerialPort|auxX[2]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|auxX[0]                     ; SerialPort:instSerialPort|auxX[0]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; SerialPort:instSerialPort|auxX[1]                     ; SerialPort:instSerialPort|auxX[1]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; DecodeComand:instDecodeComand|VelMed[0]               ; DecodeComand:instDecodeComand|VelMed[0]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; DecodeComand:instDecodeComand|M1Count[0]              ; DecodeComand:instDecodeComand|M1Count[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; DecodeComand:instDecodeComand|poHEX_aux1[4]           ; DecodeComand:instDecodeComand|poHEX_aux1[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.734 ; DecodeComand:instDecodeComand|state.VEL_M2            ; DecodeComand:instDecodeComand|next_state.VEL_M2_U     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.040      ;
+; 0.734 ; DecodeComand:instDecodeComand|state.VEL_M1            ; DecodeComand:instDecodeComand|next_state.VEL_M1_U     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.040      ;
+; 0.741 ; DecodeComand:instDecodeComand|next_state.SIM          ; DecodeComand:instDecodeComand|state.SIM               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.047      ;
+; 0.742 ; DecodeComand:instDecodeComand|next_state.CTRL         ; DecodeComand:instDecodeComand|state.CTRL              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.742 ; DisplaySelector:instDisplaySelector|next_state.A_Mode ; DisplaySelector:instDisplaySelector|state.A_Mode      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.742 ; SerialPort:instSerialPort|state.BIT5                  ; SerialPort:instSerialPort|next_state.BIT6             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.743 ; DecodeComand:instDecodeComand|state.SIMX              ; DecodeComand:instDecodeComand|next_state.ZSIM         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.049      ;
+; 0.744 ; DecodeComand:instDecodeComand|next_state.ZVM          ; DecodeComand:instDecodeComand|state.ZVM               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.746 ; SerialPort:instSerialPort|next_state.BIT3             ; SerialPort:instSerialPort|state.BIT3                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.052      ;
+; 0.747 ; SerialPort:instSerialPort|next_state.BIT2             ; SerialPort:instSerialPort|state.BIT2                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.747 ; DecodeComand:instDecodeComand|next_state.IDLE         ; DecodeComand:instDecodeComand|state.IDLE              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.748 ; SerialPort:instSerialPort|next_state.IDLE             ; SerialPort:instSerialPort|state.IDLE                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.748 ; DisplaySelector:instDisplaySelector|state.M1          ; DisplaySelector:instDisplaySelector|poD               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.749 ; DecodeComand:instDecodeComand|state.CTRL              ; DecodeComand:instDecodeComand|next_state.CTRLX        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.750 ; SerialPort:instSerialPort|auxX[6]                     ; SerialPort:instSerialPort|poCM[6]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.056      ;
+; 0.750 ; DecodeComand:instDecodeComand|next_state.CTRLX        ; DecodeComand:instDecodeComand|state.CTRLX             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.056      ;
+; 0.751 ; DisplaySelector:instDisplaySelector|next_state.B_Mode ; DisplaySelector:instDisplaySelector|state.B_Mode      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.057      ;
+; 0.753 ; BaudRate:instBaudRate|auxCount_PWM[15]                ; BaudRate:instBaudRate|auxCount_PWM[15]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.754 ; SerialPort:instSerialPort|next_state.BIT4             ; SerialPort:instSerialPort|state.BIT4                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.754 ; SerialPort:instSerialPort|next_state.BIT5             ; SerialPort:instSerialPort|state.BIT5                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.754 ; DecodeComand:instDecodeComand|state.CTRLX             ; DecodeComand:instDecodeComand|next_state.ZCTRL        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.755 ; DecodeComand:instDecodeComand|state.IDLE              ; DecodeComand:instDecodeComand|next_state.COMMAND      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.755 ; DisplaySelector:instDisplaySelector|state.B_Mode      ; DisplaySelector:instDisplaySelector|next_state.M2     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.755 ; SerialPort:instSerialPort|state.BIT4                  ; SerialPort:instSerialPort|next_state.BIT5             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.757 ; DecodeComand:instDecodeComand|state.VEL_MED_U         ; DecodeComand:instDecodeComand|next_state.ZVM          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.063      ;
+; 0.758 ; DisplaySelector:instDisplaySelector|state.B_Mode      ; DisplaySelector:instDisplaySelector|poA               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.064      ;
+; 0.759 ; DecodeComand:instDecodeComand|M2CountU[0]             ; DecodeComand:instDecodeComand|M2Count[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.759 ; SerialPort:instSerialPort|state.BIT3                  ; SerialPort:instSerialPort|next_state.BIT4             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.761 ; PWM:instPWM|auxCount[6]                               ; PWM:instPWM|auxCount[6]                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.067      ;
+; 0.771 ; DisplaySelector:instDisplaySelector|next_state.M2     ; DisplaySelector:instDisplaySelector|state.M2          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.077      ;
+; 0.788 ; DisplaySelector:instDisplaySelector|state.M2          ; DisplaySelector:instDisplaySelector|next_state.A_Mode ; clk          ; clk         ; 0.000        ; 0.000      ; 1.094      ;
+; 0.789 ; DisplaySelector:instDisplaySelector|state.M2          ; DisplaySelector:instDisplaySelector|poC               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.095      ;
+; 0.793 ; DisplaySelector:instDisplaySelector|state.M2          ; DisplaySelector:instDisplaySelector|poB               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.099      ;
+; 0.794 ; DisplaySelector:instDisplaySelector|state.M2          ; DisplaySelector:instDisplaySelector|poH               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.100      ;
+; 0.890 ; DecodeComand:instDecodeComand|state.SIM               ; DecodeComand:instDecodeComand|next_state.SIMX         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.196      ;
+; 0.890 ; DecodeComand:instDecodeComand|next_state.ZCTRL        ; DecodeComand:instDecodeComand|state.ZCTRL             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.196      ;
+; 0.895 ; DecodeComand:instDecodeComand|next_state.VEL_MED      ; DecodeComand:instDecodeComand|state.VEL_MED           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.201      ;
+; 0.896 ; SerialPort:instSerialPort|next_state.STOP             ; SerialPort:instSerialPort|state.STOP                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.202      ;
+; 0.897 ; DecodeComand:instDecodeComand|next_state.VEL_MED_U    ; DecodeComand:instDecodeComand|state.VEL_MED_U         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.203      ;
+; 0.898 ; DecodeComand:instDecodeComand|state.VEL_MED           ; DecodeComand:instDecodeComand|next_state.VEL_MED_U    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.204      ;
+; 0.899 ; DisplaySelector:instDisplaySelector|next_state.M1     ; DisplaySelector:instDisplaySelector|state.M1          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 0.905 ; SerialPort:instSerialPort|auxX[5]                     ; SerialPort:instSerialPort|poCM[5]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.211      ;
+; 0.906 ; SerialPort:instSerialPort|auxX[4]                     ; SerialPort:instSerialPort|poCM[4]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 0.908 ; DecodeComand:instDecodeComand|next_state.VEL_M2       ; DecodeComand:instDecodeComand|state.VEL_M2            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.214      ;
+; 0.910 ; SerialPort:instSerialPort|auxX[3]                     ; SerialPort:instSerialPort|poCM[3]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.216      ;
+; 0.911 ; DecodeComand:instDecodeComand|next_state.VEL_M1       ; DecodeComand:instDecodeComand|state.VEL_M1            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.217      ;
+; 0.915 ; DisplaySelector:instDisplaySelector|state.A_Mode      ; DisplaySelector:instDisplaySelector|next_state.M1     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.221      ;
+; 0.960 ; DecodeComand:instDecodeComand|poHEX_aux1[4]           ; DecodeComand:instDecodeComand|poHEX1[4]               ; clk          ; clk         ; 0.000        ; -0.001     ; 1.265      ;
+; 1.058 ; SerialPort:instSerialPort|state.IDLE                  ; SerialPort:instSerialPort|next_state.IDLE             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.364      ;
+; 1.060 ; SerialPort:instSerialPort|state.IDLE                  ; SerialPort:instSerialPort|next_state.BIT1             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.366      ;
+; 1.066 ; DecodeComand:instDecodeComand|state.ZCTRL             ; DecodeComand:instDecodeComand|next_state.IDLE         ; clk          ; clk         ; 0.000        ; 0.000      ; 1.372      ;
+; 1.142 ; DecodeComand:instDecodeComand|state.VEL_M2_U          ; DecodeComand:instDecodeComand|next_state.ZM2          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.164 ; DecodeComand:instDecodeComand|M2CountU[3]             ; DecodeComand:instDecodeComand|M2Count[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.166 ; BaudRate:instBaudRate|auxCount_Sec[12]                ; BaudRate:instBaudRate|auxCount_Sec[12]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.472      ;
+; 1.171 ; BaudRate:instBaudRate|auxCount_PWM[1]                 ; BaudRate:instBaudRate|auxCount_PWM[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.477      ;
+; 1.172 ; BaudRate:instBaudRate|auxCount_PWM[2]                 ; BaudRate:instBaudRate|auxCount_PWM[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.172 ; BaudRate:instBaudRate|auxCount_PWM[4]                 ; BaudRate:instBaudRate|auxCount_PWM[4]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.172 ; BaudRate:instBaudRate|auxCount_PWM[11]                ; BaudRate:instBaudRate|auxCount_PWM[11]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.176 ; BaudRate:instBaudRate|auxCount_PWM[0]                 ; BaudRate:instBaudRate|auxCount_PWM[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.482      ;
+; 1.176 ; BaudRate:instBaudRate|auxCount[0]                     ; BaudRate:instBaudRate|auxCount[0]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.482      ;
+; 1.176 ; BaudRate:instBaudRate|auxCount_Sec[5]                 ; BaudRate:instBaudRate|auxCount_Sec[5]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.482      ;
+; 1.176 ; BaudRate:instBaudRate|auxCount_Sec[7]                 ; BaudRate:instBaudRate|auxCount_Sec[7]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.482      ;
+; 1.177 ; BaudRate:instBaudRate|auxCount_PWM[13]                ; BaudRate:instBaudRate|auxCount_PWM[13]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.177 ; BaudRate:instBaudRate|auxCount_PWM[14]                ; BaudRate:instBaudRate|auxCount_PWM[14]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.177 ; BaudRate:instBaudRate|auxCount_Sec[3]                 ; BaudRate:instBaudRate|auxCount_Sec[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.178 ; DecodeComand:instDecodeComand|M2Count[7]              ; DecodeComand:instDecodeComand|poM2[7]                 ; clk          ; clk         ; 0.000        ; 0.002      ; 1.486      ;
+; 1.179 ; SerialPort:instSerialPort|state.BIT3                  ; SerialPort:instSerialPort|auxX[2]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.485      ;
+; 1.182 ; PWM:instPWM|auxCount[0]                               ; PWM:instPWM|auxCount[0]                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.488      ;
+; 1.182 ; BaudRate:instBaudRate|auxCount_Sec[10]                ; BaudRate:instBaudRate|auxCount_Sec[10]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.488      ;
+; 1.183 ; BaudRate:instBaudRate|auxCount_Sec[9]                 ; BaudRate:instBaudRate|auxCount_Sec[9]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.183 ; SerialPort:instSerialPort|state.BIT2                  ; SerialPort:instSerialPort|auxX[1]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.489      ;
+; 1.185 ; PWM:instPWM|auxCount[2]                               ; PWM:instPWM|auxCount[2]                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.185 ; PWM:instPWM|auxCount[4]                               ; PWM:instPWM|auxCount[4]                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.185 ; BaudRate:instBaudRate|auxCount_Sec[13]                ; BaudRate:instBaudRate|auxCount_Sec[13]                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.185 ; SerialPort:instSerialPort|state.BIT2                  ; SerialPort:instSerialPort|next_state.BIT3             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.186 ; BaudRate:instBaudRate|auxCount[4]                     ; BaudRate:instBaudRate|auxCount[4]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.492      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                  ;
++-------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                 ;
++-------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[0]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[0]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[10]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[10]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[11]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[11]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[12]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[12]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[1]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[1]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[2]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[2]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[3]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[3]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[4]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[4]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[5]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[5]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[6]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[6]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[7]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[7]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[8]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[8]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[9]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[9]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[0]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[0]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[10] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[10] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[11] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[11] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[12] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[12] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[13] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[13] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[14] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[14] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[15] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[15] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[1]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[1]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[2]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[2]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[3]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[3]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[4]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[4]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[5]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[5]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[6]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[6]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[7]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[7]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[8]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[8]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[9]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[9]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[0]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[0]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[10] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[10] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[11] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[11] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[12] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[12] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[13] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[13] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[14] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[14] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[15] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[15] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[16] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[16] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[17] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[17] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[18] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[18] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[19] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[19] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[1]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[1]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[20] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[20] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[21] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[21] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[22] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[22] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[23] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[23] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[24] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[24] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[2]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[2]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[3]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[3]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[4]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[4]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[5]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[5]  ;
++-------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ENABLE    ; clk        ; 8.737  ; 8.737  ; Rise       ; clk             ;
+; RESET     ; clk        ; 11.645 ; 11.645 ; Rise       ; clk             ;
+; RX        ; clk        ; 8.783  ; 8.783  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ENABLE    ; clk        ; -5.945 ; -5.945 ; Rise       ; clk             ;
+; RESET     ; clk        ; -5.878 ; -5.878 ; Rise       ; clk             ;
+; RX        ; clk        ; -6.008 ; -6.008 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX[*]    ; clk        ; 11.389 ; 11.389 ; Rise       ; clk             ;
+;  HEX[0]   ; clk        ; 11.389 ; 11.389 ; Rise       ; clk             ;
+;  HEX[1]   ; clk        ; 10.913 ; 10.913 ; Rise       ; clk             ;
+;  HEX[2]   ; clk        ; 10.905 ; 10.905 ; Rise       ; clk             ;
+;  HEX[3]   ; clk        ; 10.865 ; 10.865 ; Rise       ; clk             ;
+;  HEX[4]   ; clk        ; 10.835 ; 10.835 ; Rise       ; clk             ;
+;  HEX[5]   ; clk        ; 10.873 ; 10.873 ; Rise       ; clk             ;
+;  HEX[6]   ; clk        ; 10.954 ; 10.954 ; Rise       ; clk             ;
+;  HEX[7]   ; clk        ; 8.192  ; 8.192  ; Rise       ; clk             ;
+; M1        ; clk        ; 12.905 ; 12.905 ; Rise       ; clk             ;
+; M2        ; clk        ; 12.824 ; 12.824 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX[*]    ; clk        ; 8.192  ; 8.192  ; Rise       ; clk             ;
+;  HEX[0]   ; clk        ; 10.891 ; 10.891 ; Rise       ; clk             ;
+;  HEX[1]   ; clk        ; 10.379 ; 10.379 ; Rise       ; clk             ;
+;  HEX[2]   ; clk        ; 10.372 ; 10.372 ; Rise       ; clk             ;
+;  HEX[3]   ; clk        ; 10.324 ; 10.324 ; Rise       ; clk             ;
+;  HEX[4]   ; clk        ; 10.344 ; 10.344 ; Rise       ; clk             ;
+;  HEX[5]   ; clk        ; 10.381 ; 10.381 ; Rise       ; clk             ;
+;  HEX[6]   ; clk        ; 10.424 ; 10.424 ; Rise       ; clk             ;
+;  HEX[7]   ; clk        ; 8.192  ; 8.192  ; Rise       ; clk             ;
+; M1        ; clk        ; 9.826  ; 9.826  ; Rise       ; clk             ;
+; M2        ; clk        ; 9.289  ; 9.289  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; 17.495 ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; clk   ; 9.000 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                               ;
++--------+----------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                              ; To Node                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 17.495 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; 0.028      ; 2.565      ;
+; 17.495 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; 0.028      ; 2.565      ;
+; 17.495 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; 0.028      ; 2.565      ;
+; 17.495 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; 0.028      ; 2.565      ;
+; 17.642 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM1[0]         ; clk          ; clk         ; 20.000       ; 0.031      ; 2.421      ;
+; 17.642 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM1[1]         ; clk          ; clk         ; 20.000       ; 0.031      ; 2.421      ;
+; 17.642 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM1[2]         ; clk          ; clk         ; 20.000       ; 0.031      ; 2.421      ;
+; 17.642 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM1[3]         ; clk          ; clk         ; 20.000       ; 0.031      ; 2.421      ;
+; 17.642 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM1[4]         ; clk          ; clk         ; 20.000       ; 0.031      ; 2.421      ;
+; 17.642 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM1[5]         ; clk          ; clk         ; 20.000       ; 0.031      ; 2.421      ;
+; 17.642 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM1[6]         ; clk          ; clk         ; 20.000       ; 0.031      ; 2.421      ;
+; 17.642 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM1[7]         ; clk          ; clk         ; 20.000       ; 0.031      ; 2.421      ;
+; 17.703 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM2[0]         ; clk          ; clk         ; 20.000       ; 0.036      ; 2.365      ;
+; 17.703 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM2[1]         ; clk          ; clk         ; 20.000       ; 0.036      ; 2.365      ;
+; 17.703 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM2[2]         ; clk          ; clk         ; 20.000       ; 0.036      ; 2.365      ;
+; 17.703 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM2[3]         ; clk          ; clk         ; 20.000       ; 0.036      ; 2.365      ;
+; 17.703 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM2[4]         ; clk          ; clk         ; 20.000       ; 0.036      ; 2.365      ;
+; 17.703 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM2[5]         ; clk          ; clk         ; 20.000       ; 0.036      ; 2.365      ;
+; 17.703 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM2[6]         ; clk          ; clk         ; 20.000       ; 0.036      ; 2.365      ;
+; 17.703 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poM2[7]         ; clk          ; clk         ; 20.000       ; 0.036      ; 2.365      ;
+; 17.712 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX1[0]       ; clk          ; clk         ; 20.000       ; 0.038      ; 2.358      ;
+; 17.713 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX2[0]       ; clk          ; clk         ; 20.000       ; 0.038      ; 2.357      ;
+; 17.713 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX2[3]       ; clk          ; clk         ; 20.000       ; 0.038      ; 2.357      ;
+; 17.713 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX2[2]       ; clk          ; clk         ; 20.000       ; 0.038      ; 2.357      ;
+; 17.713 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX2[1]       ; clk          ; clk         ; 20.000       ; 0.038      ; 2.357      ;
+; 17.713 ; SerialPort:instSerialPort|poDR         ; DecodeComand:instDecodeComand|poHEX2[4]       ; clk          ; clk         ; 20.000       ; 0.038      ; 2.357      ;
+; 17.741 ; SerialPort:instSerialPort|poCM[7]      ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.295      ;
+; 17.741 ; SerialPort:instSerialPort|poCM[7]      ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.295      ;
+; 17.741 ; SerialPort:instSerialPort|poCM[7]      ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.295      ;
+; 17.741 ; SerialPort:instSerialPort|poCM[7]      ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.295      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[12]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[13]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[14]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[15]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[16]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[17]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[18]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[19]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[20]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[21]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[22]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[23]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.783 ; BaudRate:instBaudRate|auxCount_Sec[12] ; BaudRate:instBaudRate|auxCount_Sec[24]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.249      ;
+; 17.829 ; SerialPort:instSerialPort|poCM[0]      ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.207      ;
+; 17.829 ; SerialPort:instSerialPort|poCM[0]      ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.207      ;
+; 17.829 ; SerialPort:instSerialPort|poCM[0]      ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.207      ;
+; 17.829 ; SerialPort:instSerialPort|poCM[0]      ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.207      ;
+; 17.840 ; SerialPort:instSerialPort|poCM[4]      ; DecodeComand:instDecodeComand|next_state.IDLE ; clk          ; clk         ; 20.000       ; 0.005      ; 2.197      ;
+; 17.842 ; SerialPort:instSerialPort|poCM[6]      ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.194      ;
+; 17.842 ; SerialPort:instSerialPort|poCM[6]      ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.194      ;
+; 17.842 ; SerialPort:instSerialPort|poCM[6]      ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.194      ;
+; 17.842 ; SerialPort:instSerialPort|poCM[6]      ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.194      ;
+; 17.846 ; SerialPort:instSerialPort|poCM[3]      ; DecodeComand:instDecodeComand|poHEX1[3]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.190      ;
+; 17.846 ; SerialPort:instSerialPort|poCM[3]      ; DecodeComand:instDecodeComand|poHEX1[2]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.190      ;
+; 17.846 ; SerialPort:instSerialPort|poCM[3]      ; DecodeComand:instDecodeComand|poHEX1[1]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.190      ;
+; 17.846 ; SerialPort:instSerialPort|poCM[3]      ; DecodeComand:instDecodeComand|poHEX1[4]       ; clk          ; clk         ; 20.000       ; 0.004      ; 2.190      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[12]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[13]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[14]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[15]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[16]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[17]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[18]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[19]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[20]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[21]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[22]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[23]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.855 ; BaudRate:instBaudRate|auxCount_Sec[11] ; BaudRate:instBaudRate|auxCount_Sec[24]        ; clk          ; clk         ; 20.000       ; -0.004     ; 2.173      ;
+; 17.876 ; SerialPort:instSerialPort|poCM[5]      ; DecodeComand:instDecodeComand|next_state.IDLE ; clk          ; clk         ; 20.000       ; 0.005      ; 2.161      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[12]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[13]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[14]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[15]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[16]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[17]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[18]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[19]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[20]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[21]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[22]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[23]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.877 ; BaudRate:instBaudRate|auxCount_Sec[15] ; BaudRate:instBaudRate|auxCount_Sec[24]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.155      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[12]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[13]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[14]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[15]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[16]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[17]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[18]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[19]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[20]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[21]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[22]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[23]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.883 ; BaudRate:instBaudRate|auxCount_Sec[16] ; BaudRate:instBaudRate|auxCount_Sec[24]        ; clk          ; clk         ; 20.000       ; 0.000      ; 2.149      ;
+; 17.888 ; SerialPort:instSerialPort|poCM[7]      ; DecodeComand:instDecodeComand|poM1[0]         ; clk          ; clk         ; 20.000       ; 0.007      ; 2.151      ;
+; 17.888 ; SerialPort:instSerialPort|poCM[7]      ; DecodeComand:instDecodeComand|poM1[1]         ; clk          ; clk         ; 20.000       ; 0.007      ; 2.151      ;
+; 17.888 ; SerialPort:instSerialPort|poCM[7]      ; DecodeComand:instDecodeComand|poM1[2]         ; clk          ; clk         ; 20.000       ; 0.007      ; 2.151      ;
+; 17.888 ; SerialPort:instSerialPort|poCM[7]      ; DecodeComand:instDecodeComand|poM1[3]         ; clk          ; clk         ; 20.000       ; 0.007      ; 2.151      ;
++--------+----------------------------------------+-----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                             ; To Node                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; BaudRate:instBaudRate|uartCounter[3]                  ; BaudRate:instBaudRate|uartCounter[3]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; BaudRate:instBaudRate|uartCounter[1]                  ; BaudRate:instBaudRate|uartCounter[1]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; BaudRate:instBaudRate|uartCounter[2]                  ; BaudRate:instBaudRate|uartCounter[2]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.IDLE             ; SerialPort:instSerialPort|next_state.IDLE             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.BIT1             ; SerialPort:instSerialPort|next_state.BIT1             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.BIT2             ; SerialPort:instSerialPort|next_state.BIT2             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.BIT3             ; SerialPort:instSerialPort|next_state.BIT3             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.BIT4             ; SerialPort:instSerialPort|next_state.BIT4             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.BIT5             ; SerialPort:instSerialPort|next_state.BIT5             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.BIT6             ; SerialPort:instSerialPort|next_state.BIT6             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.BIT7             ; SerialPort:instSerialPort|next_state.BIT7             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.BIT8             ; SerialPort:instSerialPort|next_state.BIT8             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|next_state.STOP             ; SerialPort:instSerialPort|next_state.STOP             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|auxX[5]                     ; SerialPort:instSerialPort|auxX[5]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|auxX[7]                     ; SerialPort:instSerialPort|auxX[7]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|auxX[6]                     ; SerialPort:instSerialPort|auxX[6]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|auxX[4]                     ; SerialPort:instSerialPort|auxX[4]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|auxX[3]                     ; SerialPort:instSerialPort|auxX[3]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|auxX[2]                     ; SerialPort:instSerialPort|auxX[2]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|auxX[0]                     ; SerialPort:instSerialPort|auxX[0]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SerialPort:instSerialPort|auxX[1]                     ; SerialPort:instSerialPort|auxX[1]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DecodeComand:instDecodeComand|VelMed[0]               ; DecodeComand:instDecodeComand|VelMed[0]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DecodeComand:instDecodeComand|M1Count[0]              ; DecodeComand:instDecodeComand|M1Count[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DecodeComand:instDecodeComand|poHEX_aux1[4]           ; DecodeComand:instDecodeComand|poHEX_aux1[4]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.237 ; DecodeComand:instDecodeComand|state.VEL_M2            ; DecodeComand:instDecodeComand|next_state.VEL_M2_U     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; DecodeComand:instDecodeComand|state.VEL_M1            ; DecodeComand:instDecodeComand|next_state.VEL_M1_U     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.389      ;
+; 0.238 ; SerialPort:instSerialPort|state.BIT5                  ; SerialPort:instSerialPort|next_state.BIT6             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.390      ;
+; 0.239 ; DecodeComand:instDecodeComand|next_state.SIM          ; DecodeComand:instDecodeComand|state.SIM               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; DecodeComand:instDecodeComand|next_state.CTRL         ; DecodeComand:instDecodeComand|state.CTRL              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240 ; DecodeComand:instDecodeComand|state.SIMX              ; DecodeComand:instDecodeComand|next_state.ZSIM         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; DisplaySelector:instDisplaySelector|next_state.A_Mode ; DisplaySelector:instDisplaySelector|state.A_Mode      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; DisplaySelector:instDisplaySelector|state.M1          ; DisplaySelector:instDisplaySelector|poD               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; DecodeComand:instDecodeComand|next_state.ZVM          ; DecodeComand:instDecodeComand|state.ZVM               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; SerialPort:instSerialPort|next_state.BIT2             ; SerialPort:instSerialPort|state.BIT2                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; DecodeComand:instDecodeComand|next_state.IDLE         ; DecodeComand:instDecodeComand|state.IDLE              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; BaudRate:instBaudRate|auxCount_PWM[15]                ; BaudRate:instBaudRate|auxCount_PWM[15]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SerialPort:instSerialPort|next_state.IDLE             ; SerialPort:instSerialPort|state.IDLE                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SerialPort:instSerialPort|next_state.BIT3             ; SerialPort:instSerialPort|state.BIT3                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SerialPort:instSerialPort|auxX[6]                     ; SerialPort:instSerialPort|poCM[6]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; DecodeComand:instDecodeComand|state.CTRL              ; DecodeComand:instDecodeComand|next_state.CTRLX        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; DecodeComand:instDecodeComand|next_state.CTRLX        ; DecodeComand:instDecodeComand|state.CTRLX             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; DisplaySelector:instDisplaySelector|next_state.B_Mode ; DisplaySelector:instDisplaySelector|state.B_Mode      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.244 ; DecodeComand:instDecodeComand|state.VEL_MED_U         ; DecodeComand:instDecodeComand|next_state.ZVM          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244 ; SerialPort:instSerialPort|state.BIT4                  ; SerialPort:instSerialPort|next_state.BIT5             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.245 ; DisplaySelector:instDisplaySelector|state.B_Mode      ; DisplaySelector:instDisplaySelector|next_state.M2     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; SerialPort:instSerialPort|next_state.BIT4             ; SerialPort:instSerialPort|state.BIT4                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; SerialPort:instSerialPort|next_state.BIT5             ; SerialPort:instSerialPort|state.BIT5                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; DecodeComand:instDecodeComand|state.CTRLX             ; DecodeComand:instDecodeComand|next_state.ZCTRL        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.247 ; PWM:instPWM|auxCount[6]                               ; PWM:instPWM|auxCount[6]                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.248 ; DisplaySelector:instDisplaySelector|state.B_Mode      ; DisplaySelector:instDisplaySelector|poA               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.400      ;
+; 0.249 ; SerialPort:instSerialPort|state.BIT3                  ; SerialPort:instSerialPort|next_state.BIT4             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.250 ; DecodeComand:instDecodeComand|state.IDLE              ; DecodeComand:instDecodeComand|next_state.COMMAND      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.250 ; DecodeComand:instDecodeComand|M2CountU[0]             ; DecodeComand:instDecodeComand|M2Count[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.255 ; DisplaySelector:instDisplaySelector|next_state.M2     ; DisplaySelector:instDisplaySelector|state.M2          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.407      ;
+; 0.259 ; DisplaySelector:instDisplaySelector|state.M2          ; DisplaySelector:instDisplaySelector|poC               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.411      ;
+; 0.263 ; DisplaySelector:instDisplaySelector|state.M2          ; DisplaySelector:instDisplaySelector|poB               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.415      ;
+; 0.264 ; DisplaySelector:instDisplaySelector|state.M2          ; DisplaySelector:instDisplaySelector|poH               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.416      ;
+; 0.282 ; DisplaySelector:instDisplaySelector|state.M2          ; DisplaySelector:instDisplaySelector|next_state.A_Mode ; clk          ; clk         ; 0.000        ; 0.000      ; 0.434      ;
+; 0.289 ; DisplaySelector:instDisplaySelector|state.A_Mode      ; DisplaySelector:instDisplaySelector|next_state.M1     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.441      ;
+; 0.312 ; DecodeComand:instDecodeComand|poHEX_aux1[4]           ; DecodeComand:instDecodeComand|poHEX1[4]               ; clk          ; clk         ; 0.000        ; -0.001     ; 0.463      ;
+; 0.322 ; DecodeComand:instDecodeComand|next_state.ZCTRL        ; DecodeComand:instDecodeComand|state.ZCTRL             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.474      ;
+; 0.323 ; DecodeComand:instDecodeComand|state.SIM               ; DecodeComand:instDecodeComand|next_state.SIMX         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.475      ;
+; 0.324 ; DecodeComand:instDecodeComand|next_state.VEL_MED      ; DecodeComand:instDecodeComand|state.VEL_MED           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.324 ; DecodeComand:instDecodeComand|next_state.VEL_MED_U    ; DecodeComand:instDecodeComand|state.VEL_MED_U         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.325 ; SerialPort:instSerialPort|next_state.STOP             ; SerialPort:instSerialPort|state.STOP                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; DecodeComand:instDecodeComand|state.VEL_MED           ; DecodeComand:instDecodeComand|next_state.VEL_MED_U    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.326 ; DisplaySelector:instDisplaySelector|next_state.M1     ; DisplaySelector:instDisplaySelector|state.M1          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.327 ; SerialPort:instSerialPort|state.IDLE                  ; SerialPort:instSerialPort|next_state.IDLE             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.479      ;
+; 0.328 ; SerialPort:instSerialPort|state.IDLE                  ; SerialPort:instSerialPort|next_state.BIT1             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.480      ;
+; 0.329 ; SerialPort:instSerialPort|auxX[4]                     ; SerialPort:instSerialPort|poCM[4]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.330 ; SerialPort:instSerialPort|auxX[5]                     ; SerialPort:instSerialPort|poCM[5]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.482      ;
+; 0.330 ; DecodeComand:instDecodeComand|next_state.VEL_M2       ; DecodeComand:instDecodeComand|state.VEL_M2            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.482      ;
+; 0.332 ; SerialPort:instSerialPort|auxX[3]                     ; SerialPort:instSerialPort|poCM[3]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.484      ;
+; 0.334 ; DecodeComand:instDecodeComand|next_state.VEL_M1       ; DecodeComand:instDecodeComand|state.VEL_M1            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.486      ;
+; 0.355 ; BaudRate:instBaudRate|auxCount_Sec[12]                ; BaudRate:instBaudRate|auxCount_Sec[12]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357 ; BaudRate:instBaudRate|auxCount_PWM[1]                 ; BaudRate:instBaudRate|auxCount_PWM[1]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.357 ; DecodeComand:instDecodeComand|M2CountU[3]             ; DecodeComand:instDecodeComand|M2Count[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; BaudRate:instBaudRate|auxCount_PWM[2]                 ; BaudRate:instBaudRate|auxCount_PWM[2]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; BaudRate:instBaudRate|auxCount_PWM[4]                 ; BaudRate:instBaudRate|auxCount_PWM[4]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; BaudRate:instBaudRate|auxCount_PWM[11]                ; BaudRate:instBaudRate|auxCount_PWM[11]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; BaudRate:instBaudRate|auxCount_PWM[0]                 ; BaudRate:instBaudRate|auxCount_PWM[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; BaudRate:instBaudRate|auxCount[0]                     ; BaudRate:instBaudRate|auxCount[0]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.361 ; BaudRate:instBaudRate|auxCount_PWM[13]                ; BaudRate:instBaudRate|auxCount_PWM[13]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; BaudRate:instBaudRate|auxCount_PWM[14]                ; BaudRate:instBaudRate|auxCount_PWM[14]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; BaudRate:instBaudRate|auxCount_Sec[5]                 ; BaudRate:instBaudRate|auxCount_Sec[5]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; BaudRate:instBaudRate|auxCount_Sec[7]                 ; BaudRate:instBaudRate|auxCount_Sec[7]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; SerialPort:instSerialPort|state.BIT3                  ; SerialPort:instSerialPort|auxX[2]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; PWM:instPWM|auxCount[0]                               ; PWM:instPWM|auxCount[0]                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; BaudRate:instBaudRate|auxCount_Sec[3]                 ; BaudRate:instBaudRate|auxCount_Sec[3]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; PWM:instPWM|auxCount[2]                               ; PWM:instPWM|auxCount[2]                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; PWM:instPWM|auxCount[4]                               ; PWM:instPWM|auxCount[4]                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; BaudRate:instBaudRate|auxCount[4]                     ; BaudRate:instBaudRate|auxCount[4]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; BaudRate:instBaudRate|auxCount_Sec[9]                 ; BaudRate:instBaudRate|auxCount_Sec[9]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; BaudRate:instBaudRate|auxCount_Sec[10]                ; BaudRate:instBaudRate|auxCount_Sec[10]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; BaudRate:instBaudRate|auxCount_Sec[11]                ; BaudRate:instBaudRate|auxCount_Sec[11]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; BaudRate:instBaudRate|auxCount_Sec[13]                ; BaudRate:instBaudRate|auxCount_Sec[13]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; SerialPort:instSerialPort|state.BIT2                  ; SerialPort:instSerialPort|auxX[1]                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.366 ; BaudRate:instBaudRate|auxCount_Sec[21]                ; BaudRate:instBaudRate|auxCount_Sec[21]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366 ; BaudRate:instBaudRate|auxCount_Sec[0]                 ; BaudRate:instBaudRate|auxCount_Sec[0]                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.367 ; BaudRate:instBaudRate|auxCount_PWM[10]                ; BaudRate:instBaudRate|auxCount_PWM[10]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                  ;
++-------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                 ;
++-------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[0]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[0]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[10]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[10]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[11]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[11]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[12]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[12]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[1]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[1]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[2]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[2]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[3]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[3]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[4]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[4]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[5]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[5]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[6]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[6]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[7]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[7]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[8]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[8]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[9]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount[9]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[10] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[10] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[11] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[11] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[12] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[12] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[13] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[13] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[14] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[14] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[15] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[15] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_PWM[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[10] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[10] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[11] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[11] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[12] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[12] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[13] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[13] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[14] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[14] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[15] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[15] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[16] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[16] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[17] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[17] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[18] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[18] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[19] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[19] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[20] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[20] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[21] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[21] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[22] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[22] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[23] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[23] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[24] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[24] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; BaudRate:instBaudRate|auxCount_Sec[5]  ;
++-------+--------------+----------------+------------------+-------+------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ENABLE    ; clk        ; 3.587 ; 3.587 ; Rise       ; clk             ;
+; RESET     ; clk        ; 4.611 ; 4.611 ; Rise       ; clk             ;
+; RX        ; clk        ; 3.445 ; 3.445 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ENABLE    ; clk        ; -2.553 ; -2.553 ; Rise       ; clk             ;
+; RESET     ; clk        ; -2.602 ; -2.602 ; Rise       ; clk             ;
+; RX        ; clk        ; -2.568 ; -2.568 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; clk        ; 4.763 ; 4.763 ; Rise       ; clk             ;
+;  HEX[0]   ; clk        ; 4.763 ; 4.763 ; Rise       ; clk             ;
+;  HEX[1]   ; clk        ; 4.516 ; 4.516 ; Rise       ; clk             ;
+;  HEX[2]   ; clk        ; 4.514 ; 4.514 ; Rise       ; clk             ;
+;  HEX[3]   ; clk        ; 4.486 ; 4.486 ; Rise       ; clk             ;
+;  HEX[4]   ; clk        ; 4.495 ; 4.495 ; Rise       ; clk             ;
+;  HEX[5]   ; clk        ; 4.515 ; 4.515 ; Rise       ; clk             ;
+;  HEX[6]   ; clk        ; 4.538 ; 4.538 ; Rise       ; clk             ;
+;  HEX[7]   ; clk        ; 3.725 ; 3.725 ; Rise       ; clk             ;
+; M1        ; clk        ; 5.262 ; 5.262 ; Rise       ; clk             ;
+; M2        ; clk        ; 5.158 ; 5.158 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; clk        ; 3.725 ; 3.725 ; Rise       ; clk             ;
+;  HEX[0]   ; clk        ; 4.599 ; 4.599 ; Rise       ; clk             ;
+;  HEX[1]   ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  HEX[2]   ; clk        ; 4.343 ; 4.343 ; Rise       ; clk             ;
+;  HEX[3]   ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
+;  HEX[4]   ; clk        ; 4.330 ; 4.330 ; Rise       ; clk             ;
+;  HEX[5]   ; clk        ; 4.348 ; 4.348 ; Rise       ; clk             ;
+;  HEX[6]   ; clk        ; 4.372 ; 4.372 ; Rise       ; clk             ;
+;  HEX[7]   ; clk        ; 3.725 ; 3.725 ; Rise       ; clk             ;
+; M1        ; clk        ; 4.233 ; 4.233 ; Rise       ; clk             ;
+; M2        ; clk        ; 4.067 ; 4.067 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 12.650 ; 0.215 ; N/A      ; N/A     ; 8.758               ;
+;  clk             ; 12.650 ; 0.215 ; N/A      ; N/A     ; 8.758               ;
+; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  clk             ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ENABLE    ; clk        ; 8.737  ; 8.737  ; Rise       ; clk             ;
+; RESET     ; clk        ; 11.645 ; 11.645 ; Rise       ; clk             ;
+; RX        ; clk        ; 8.783  ; 8.783  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ENABLE    ; clk        ; -2.553 ; -2.553 ; Rise       ; clk             ;
+; RESET     ; clk        ; -2.602 ; -2.602 ; Rise       ; clk             ;
+; RX        ; clk        ; -2.568 ; -2.568 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; HEX[*]    ; clk        ; 11.389 ; 11.389 ; Rise       ; clk             ;
+;  HEX[0]   ; clk        ; 11.389 ; 11.389 ; Rise       ; clk             ;
+;  HEX[1]   ; clk        ; 10.913 ; 10.913 ; Rise       ; clk             ;
+;  HEX[2]   ; clk        ; 10.905 ; 10.905 ; Rise       ; clk             ;
+;  HEX[3]   ; clk        ; 10.865 ; 10.865 ; Rise       ; clk             ;
+;  HEX[4]   ; clk        ; 10.835 ; 10.835 ; Rise       ; clk             ;
+;  HEX[5]   ; clk        ; 10.873 ; 10.873 ; Rise       ; clk             ;
+;  HEX[6]   ; clk        ; 10.954 ; 10.954 ; Rise       ; clk             ;
+;  HEX[7]   ; clk        ; 8.192  ; 8.192  ; Rise       ; clk             ;
+; M1        ; clk        ; 12.905 ; 12.905 ; Rise       ; clk             ;
+; M2        ; clk        ; 12.824 ; 12.824 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; clk        ; 3.725 ; 3.725 ; Rise       ; clk             ;
+;  HEX[0]   ; clk        ; 4.599 ; 4.599 ; Rise       ; clk             ;
+;  HEX[1]   ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  HEX[2]   ; clk        ; 4.343 ; 4.343 ; Rise       ; clk             ;
+;  HEX[3]   ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
+;  HEX[4]   ; clk        ; 4.330 ; 4.330 ; Rise       ; clk             ;
+;  HEX[5]   ; clk        ; 4.348 ; 4.348 ; Rise       ; clk             ;
+;  HEX[6]   ; clk        ; 4.372 ; 4.372 ; Rise       ; clk             ;
+;  HEX[7]   ; clk        ; 3.725 ; 3.725 ; Rise       ; clk             ;
+; M1        ; clk        ; 4.233 ; 4.233 ; Rise       ; clk             ;
+; M2        ; clk        ; 4.067 ; 4.067 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 3869     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 3869     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 368   ; 368  ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 59    ; 59   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Dec 03 17:18:18 2024
+Info: Command: quartus_sta Integrador -c Integrador
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'Integrador.sdc'
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 12.650
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    12.650         0.000 clk 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 8.758
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.758         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 17.495
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    17.495         0.000 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     9.000         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4538 megabytes
+    Info: Processing ended: Tue Dec 03 17:18:20 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
